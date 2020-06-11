@@ -2,7 +2,7 @@
 # It's set as a secure environment variable in the .travis.yml file
 PACTICIPANT := "pactflow-example-consumer-js-kafka"
 WEBHOOK_UUID := "c76b601e-d66a-4eb1-88a4-6ebc50c0df8b"
-TRIGGER_PROVIDER_BUILD_URL := "https://api.travis-ci.com/repo/pactflow%2Fexample-provider/requests"
+PACT_CLI="docker run --rm -v ${PWD}:${PWD} -e PACT_BROKER_BASE_URL -e PACT_BROKER_TOKEN pactfoundation/pact-cli:latest"
 
 # Only deploy from master
 ifeq ($(TRAVIS_BRANCH),master)
