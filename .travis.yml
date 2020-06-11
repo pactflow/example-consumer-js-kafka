@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - 12
+services:
+  - docker
+env:
+  global:
+    - PACT_BROKER_BASE_URL=https://dius.pact.dius.com.au
+    # Encrypted PACT_BROKER_TOKEN
+    - secure: "Ec6rThYyH+r4HhkXWRIgBZBewOaVVGpTIooRwD3WV2SwF1/TJbfFVMIc2vNHzAMDh7yK/O0kx3W52rbbWOk3PhikJEleAQymEIqBKuZ7loF0d4sewAWVgZfspjvMKiyLb6P8CvAGqi9/YzijJ9vVKWAD1hdPWO70AFdURDYiJZ7sp2S1tVCxEC4FJkv8kaskLh49WpY2pNiV916wSbZL5Iiwco/M4242kNXg6OtxaRFxjWeZwLPALSh7e55sOrNiGIwVB/JNQkLHUZxmtXCTIgx1jlI2+eVjqG4fSpIcAriGfDWI7Pkih0SD6D3xA/LOoM8s+ZrM33xLDFTpJ7J/0njqimvWQUYpjSXxQQ1tORFfWfon4B4p2cMfcQDKOb1Y2uq4hM+aq3FMqemBnBX4hij8KUpT0ZC4YAKas882TTHtDwc/ZGr/p3nYJW3h0MJ/78Lj9QBoN9EgeZDPjMntfaDPpc37bVAdV1pGmgGaO6Smq8i2UcClpJrIa/Pq8tSHVdAzq5cUZsX1u/MpAN7mDCMyM9V0pkLw8kl4dOO9UJ2hStrp3FwpgRuNrRWBVX5kpsEn2tGraf/eU4wTjfLIcoXNWqNBqNrPgwr1i30SbIYbqv1U9CARroj+ke6Sz4XKJHXpq2xy1wK1CRT/cvV2bUdBvZFpQiunTQ7upSWR+1k="
+before_script:
+  - docker pull pactfoundation/pact-cli:latest
+script:
+- make ci
