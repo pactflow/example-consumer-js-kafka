@@ -81,7 +81,7 @@ create_github_token_secret:
 create_or_update_github_webhook:
 	@"${PACT_CLI}" \
 	  broker create-or-update-webhook \
-	  'https://api.github.com/repos/pactflow/pactflow-example-consumer-js-kafka/statuses/$${pactbroker.consumerVersionNumber}' \
+	  'https://api.github.com/repos/pactflow/example-consumer-js-kafka/statuses/$${pactbroker.consumerVersionNumber}' \
 	  --header 'Content-Type: application/json' 'Accept: application/vnd.github.v3+json' 'Authorization: token $${user.githubCommitStatusToken}' \
 	  --request POST \
 	  --data @${PWD}/pactflow/github-commit-status-webhook.json \
