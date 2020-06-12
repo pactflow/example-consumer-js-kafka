@@ -127,4 +127,7 @@ docker:
 start: docker
 	npm start
 
+test-events:
+	npm run test:events
+
 .PHONY: test start docker docker-stop docker-rm docker-logs
