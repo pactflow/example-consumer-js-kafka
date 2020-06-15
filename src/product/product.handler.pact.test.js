@@ -26,7 +26,7 @@ describe("Kafka handler", () => {
           type: like("Product Range"),
           name: like("Some Product"),
           version: like("v1"),
-          event: term({ generate: "CREATED", matcher: "^(CREATED|UPDATE|DELETED)$" }),
+          event: term({ generate: "UPDATED", matcher: "^(CREATED|UPDATED|DELETED)$" }),
         })
         .withMetadata({
           "content-type": "application/json",
