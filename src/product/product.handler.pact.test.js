@@ -30,6 +30,7 @@ describe("Kafka handler", () => {
         })
         .withMetadata({
           "content-type": "application/json",
+          "kafka_topic": "products",
         })
         .verify(asynchronousBodyHandler(productEventHandler));
     });
