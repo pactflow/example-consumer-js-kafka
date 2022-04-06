@@ -20,8 +20,8 @@ jobs:
         pact_provider:
           [
             "pactflow-example-provider-java-kafka",
-            # "pactflow-example-provider-restassured",
-            # "pactflow-example-provider-postman",
+            # "pactflow-example-bi-directional-provider-restassured",
+            # "pactflow-example-bi-directional-provider-postman",
             # "pactflow-example-provider",
           ]
     steps:
