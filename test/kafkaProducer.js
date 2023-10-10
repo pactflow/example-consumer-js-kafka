@@ -1,7 +1,7 @@
 // Simulate sending messages to the Kafka queue and receiving
 const { Kafka } = require("kafkajs");
+const { faker } = require('@faker-js/faker');
 const { v4  } = require('uuid');
-const faker = require('faker');
 
 const kafka = new Kafka({
   clientId: "pactflow-example-producer-js-kafka",

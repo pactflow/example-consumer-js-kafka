@@ -1,10 +1,10 @@
 const {
-  Matchers,
+  MatchersV3,
   MessageConsumerPact,
   asynchronousBodyHandler,
 } = require("@pact-foundation/pact");
 const productEventHandler = require('./product.handler')
-const { like, term } = Matchers;
+const { like, regex } = MatchersV3;
 
 const path = require("path");
 
@@ -14,7 +14,7 @@ describe("Kafka handler", () => {
     dir: path.resolve(process.cwd(), "pacts"),
     pactfileWriteMode: "update",
     provider: "pactflow-example-provider-java-kafka",
-    logLevel: "info",
+    logLevel: process.env.PACT_LOG_LEVEL ?? "info",
   });
 
   describe("receive a product update", () => {
@@ -26,7 +26,7 @@ describe("Kafka handler", () => {
           type: like("Product Range"),
           name: like("Some Product"),
           version: like("v1"),
-          event: term({ generate: "UPDATED", matcher: "^(CREATED|UPDATED|DELETED)$" }),
+          event: regex("^(CREATED|UPDATED|DELETED)$","UPDATED"),
         })
         .withMetadata({
           "content-type": "application/json",
