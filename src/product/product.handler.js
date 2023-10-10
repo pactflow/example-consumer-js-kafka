@@ -4,7 +4,7 @@ const Product = require('./product');
 const handler = (product) => {
   console.log('received product:', product)
 
-  Promise.resolve(repository.insert(new Product(product.id, product.type, product.name, product.version)))
+  return Promise.resolve(repository.insert(new Product(product.id, product.type, product.name, product.version)))
 }
 
 module.exports = handler
