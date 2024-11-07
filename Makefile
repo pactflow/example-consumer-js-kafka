@@ -30,7 +30,7 @@ fake_ci: .env
 
 
 publish_pacts: .env
-	@"${PACT_CLI}" publish ${PWD}/pacts --consumer-app-version ${GIT_COMMIT} --tag ${GIT_BRANCH}
+	@"${PACT_CLI}" publish ${PWD}/pacts --consumer-app-version ${GIT_COMMIT} --branch ${GIT_BRANCH}
 
 ## =====================
 ## Build/test tasks
@@ -46,7 +46,7 @@ test: .env
 ## Deploy tasks
 ## =====================
 
-deploy: deploy_app tag record_deployment
+deploy: deploy_app record_deployment
 
 no_deploy:
 	@echo "Not deploying as not on master branch"
@@ -62,13 +62,6 @@ can_i_deploy: .env
 
 deploy_app:
 	@echo "Deploying to prod"
-
-tag: .env
-	@"${PACT_CLI}" broker create-version-tag \
-	  --pacticipant ${PACTICIPANT} \
-	  --version ${GIT_COMMIT} \
-		--auto-create-version \
-	  --tag ${GIT_BRANCH}
 
 record_deployment: .env
 	@"${PACT_CLI}" broker record-deployment --pacticipant ${PACTICIPANT} --version ${GIT_COMMIT} --environment production
