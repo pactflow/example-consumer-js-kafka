@@ -27,6 +27,11 @@ https://docs.pactflow.io/docs/workshops/ci-cd/set-up-ci/prerequisites/
 
 ## Usage
 
+* Install the project: `make install`
+  * `npm install`
 * Running the API locally: `make start`
+  * `docker-compose -f kafka-cluster.yml up -d --no-recreate`
+  * `npm run start`
 * Producing test events into the `product` topic: `make test-events`
+  * `npm run test:events`
 * Retrieve latest products: `curl localhost:8080/products`

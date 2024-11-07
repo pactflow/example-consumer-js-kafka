@@ -36,6 +36,9 @@ publish_pacts: .env
 ## Build/test tasks
 ## =====================
 
+install: 
+	npm install
+
 test: .env
 	npm run test:pact
 

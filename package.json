@@ -11,16 +11,16 @@
     "test:events": "node test/kafkaProducer.js"
   },
   "dependencies": {
-    "@faker-js/faker": "^8.1.0",
+    "@faker-js/faker": "^9.2.0",
     "cors": "^2.8.5",
-    "express": "^4.18.2",
+    "express": "^5.0.1",
     "kafkajs": "^2.2.4",
-    "uuid": "^9.0.1"
+    "uuid": "^11.0.2"
   },
   "devDependencies": {
-    "@pact-foundation/pact": "^12.1.0",
-    "dotenv": "^16.3.1",
-    "eslint": "^8.51.0",
+    "@pact-foundation/pact": "^13.1.4",
+    "dotenv": "^16.4.5",
+    "eslint": "^9.14.0",
     "jest": "^29.7.0"
   },
   "license": "ISC"
