@@ -11,7 +11,7 @@
     "test:events": "node test/kafkaProducer.js"
   },
   "dependencies": {
-    "@faker-js/faker": "^9.2.0",
+    "@faker-js/faker": "^10.0.0",
     "cors": "^2.8.5",
     "express": "^5.0.1",
     "kafkajs": "^2.2.4",
