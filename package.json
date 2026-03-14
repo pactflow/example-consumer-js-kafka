@@ -18,7 +18,7 @@
     "uuid": "^13.0.0"
   },
   "devDependencies": {
-    "@pact-foundation/pact": "16.2.0",
+    "@pact-foundation/pact": "16.3.0",
     "dotenv": "17.3.1",
     "eslint": "10.0.3",
     "jest": "30.3.0"
